@@ -89,9 +89,9 @@ namespace IniParser.Model
         {
             get
             {
-                if (_sections.ContainsSection(sectionName))
-                    return _sections[sectionName];
-                return null;
+                if (!_sections.ContainsSection(sectionName))
+                    _sections.AddSection(sectionName);
+                return _sections[sectionName];
             }
 
         }
